@@ -96,7 +96,7 @@ df.map<- only.medals %>%
   na.omit(df.map)                           # not-medal-winning nations.
 
 
-#Husk å laste ned nyeste versjon av HTML og kall den Markdown.html for å slippe å endre koden
+#Husk Ã¥ laste ned nyeste versjon av HTML og kall den Markdown.html for Ã¥ slippe Ã¥ endre koden
 
 ui <- navbarPage("Olympic Medals", id="medals",
                  tabPanel("Home",
