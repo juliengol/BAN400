@@ -1,16 +1,4 @@
-# BAN400
-
----
-title: "Olympic Medals Shiny app"
-author: "Group X"
-date: "15 12 2020"
-output: 
-  html_document:
-    theme: flatly
-    toc: true
-    toc_float: true
-    code_download: true
----
+# Olympic Medals Shiny app
 
 ## Introduction and purpose
 This app is design to interactively visualize Olympic Medal winners. The development of the app is part of the BAN400 course at the Norwegian School of Economics. The app consists of three tabs outlining a map with the most medal winning countries, a time line graph over the medal development for each country and a markdown report with graphs and detailed information about the dataset.
