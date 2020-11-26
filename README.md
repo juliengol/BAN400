@@ -1,4 +1,4 @@
-# Olympic Medals Shiny app
+# Olympic Medals Shiny App
 
 ## Introduction and purpose
 This app is design to interactively visualize Olympic Medal winners. The development of the app is part of the BAN400 course at the Norwegian School of Economics. The app consists of three tabs outlining a map with the most medal winning countries, a time line graph over the medal development for each country and a markdown report with graphs and detailed information about the dataset.
@@ -20,7 +20,7 @@ BILDE AV APPEN
  install.packages("knitr")`
 
 
-## Methode
+## Method
 The app is made in *Shiny*, and the specifications are mainly from this library. Additionally we are including a Markdown report as one of the tabs in the app by using the Markdown library in R. 
 
 ## Input
