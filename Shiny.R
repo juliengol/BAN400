@@ -27,6 +27,8 @@ df.ol<- winter %>%
   bind_rows(summer) %>% 
   inner_join(., info, by = "code") 
 
+# to avoid confusion, we apply lower case to all column names:
+colnames(df.ol) <- tolower(colnames(df.ol))
 
 # Identifying duplicates in df.ol 
 duplicates <- df.ol %>% 
@@ -35,9 +37,6 @@ duplicates <- df.ol %>%
 #Removing duplicates
 df.ol <- df.ol %>% distinct()
 
-
-# to avoid confusion, we apply lower case to all column names:
-colnames(df.ol) <- tolower(colnames(df.ol))
 
 #Medal overview per year and country, cumsum of medal count
 medal <-
