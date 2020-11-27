@@ -136,8 +136,7 @@ ui <-
                        plotOutput("ts_plot")
                      )))
                  ),
-                 tabPanel("Markdown report",     # designing the tab for the markdown report
-                   h2("Markdown report"),
+                 tabPanel("Markdown Report",     # designing the tab for the markdown report
                    (htmlOutput("inc"))),
                    hr()
                    )
