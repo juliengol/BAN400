@@ -5,7 +5,7 @@ This app is designed to visualize Olympic Medal winners interactively. The devel
 
 *Olympic Medals* is made interactive, to account for different intputs. The user is free to click around in the map or choose the countries and medal type to look at the timeline for the different countries. In the Markdown report, we have collected some of the information from the dataset, like which country and athletes that have won the most medals. 
 
-<img src="https://raw.githubusercontent.com/juliengol/BAN400/main/medal_map.JPG" width="300"> <img src="https://raw.githubusercontent.com/juliengol/BAN400/main/medal_timeline.JPG" width="300"> <img src="https://raw.githubusercontent.com/juliengol/BAN400/main/markdown_report.JPG" width="300">
+<img src="https://raw.githubusercontent.com/juliengol/BAN400/main/medal_map1.JPG" width="300"> <img src="https://raw.githubusercontent.com/juliengol/BAN400/main/medal_timeline.JPG" width="300"> <img src="https://raw.githubusercontent.com/juliengol/BAN400/main/markdown_report.JPG" width="300">
 
 
 ## Method and installations 
