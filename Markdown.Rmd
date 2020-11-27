@@ -106,7 +106,7 @@ summer<-read_csv("summer.csv") %>%          # Summer Olympics
 
 info<- read_csv("dictionary.csv") %>%       # General information 
   na.omit() %>%                             # about countries. 
-  rename(code = "Code")                     # using the column "code"                                                                  # to be able to merge the                                                                  # data frames.
+  rename(code = "Code")                     # using the column "code"                                                                                                                                                         #  to merge the data frames.
 
 
 
