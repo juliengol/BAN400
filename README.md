@@ -7,7 +7,7 @@ With this app, we want the user to get an interactive experience of the Olympic 
 
 
 Medal map tab | Medal timeline tab | Mardown report tab
-:-------------------------:|:-------------------------: | :---------------------------:
+::|:: | ::
 <img src="https://raw.githubusercontent.com/juliengol/BAN400/main/medal_map.JPG" width="300">  |  <img src="https://raw.githubusercontent.com/juliengol/BAN400/main/medal_timeline.JPG" width="300">  | <img src="https://raw.githubusercontent.com/juliengol/BAN400/main/markdown_report.JPG" width="300">
 
 
