@@ -153,7 +153,7 @@ server <- function(input,output, session){
       addCircles(data=df.map,
                  lat=~lat,
                  lng=~lng,
-                 radius=~Nr_Medals*120,  # deciding that total medal count will be the radius of the sircles at the map
+                 radius=~Nr_Medals*120,  # deciding that total medal count will be the radius of the circles at the map
                  weight = 1, 
                  popup=paste("Country:", df.map$country, "<br>", "Total medals:", df.map$Nr_Medals, "<br>", "Gold Medals:", df.map$Gold, "<br>", "Silver Medals:", df.map$Silver, "<br>", "Bronze Medals:", df.map$Bronze)) %>% 
       setView(lng = 53, lat = 9, zoom = 2)   # setting the world as the view of the map 
@@ -174,7 +174,7 @@ server <- function(input,output, session){
     
  # the markdown tab
     getPage <- function() {
-      return(includeHTML("Markdown.html"))
+      return(includeHTML("Markdown2.html"))
     }
     output$inc <- renderUI({getPage()})
    
