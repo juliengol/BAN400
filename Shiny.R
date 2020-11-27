@@ -29,7 +29,7 @@ df.ol<- winter %>%
 
 
 # Identifying duplicates in df.ol 
-test <- df.ol %>% 
+duplicates <- df.ol %>% 
   find_duplicates(year, athlete, event, medal, discipline)
 
 #Removing duplicates
