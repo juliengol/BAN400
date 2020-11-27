@@ -1,5 +1,5 @@
 ---
-title: "Markdown"
+title: "Analysis of Olympic Winners"
 author: "BAN400"
 output: 
  html_document:
