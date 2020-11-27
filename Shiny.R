@@ -55,7 +55,7 @@ medal <-
   select(year, country, Gold, Silver, Bronze) %>%            # sort by countries over time
   group_by(country) %>%                      
   arrange(year) %>%                         
-  mutate(gold = cumsum(Gold), silver = cumsum(Silver), bronze = cumsum(Bronze)) %>%           
+  mutate(gold = cumsum(Gold), silver = cumsum(Silver), bronze = cumsum(Bronze)) %>%  #making the cumulative sum of the medals per country          
   ungroup() 
 
 #Adding total number of medals
@@ -126,10 +126,10 @@ ui <-
                    titlePanel(h2("Olympic medals timeline by country",align = "center")),
                    sidebarLayout(    
                      sidebarPanel(
-                       selectInput(inputId = "dataset",             # making the drop down menu with country
+                       selectInput(inputId = "dataset",             # making the drop down menu for countries
                                    label = "Choose a country:",
                                    choices = sort(medal$country)),
-                       selectInput(inputId = "medaltype",           # making the drop down menu with medal type
+                       selectInput(inputId = "medaltype",           # making the drop down menu for medal type
                                    label = "Chooce type of medal:",
                                    choices = list("gold", "silver", "bronze", "combined"))), 
                      mainPanel(
@@ -167,14 +167,14 @@ server <- function(input,output, session){
     # plot time series
     output$ts_plot <- renderPlot({  
       
-      dataset <- datasetInput()
-      ggplot(dataset, aes(x = year, y=get(input$medaltype))) + xlab("Year") + ylab("Number of Medals") + geom_line()
+      dataset <- datasetInput()  #using the filtered dataset consisting of data for the chosen country
+      ggplot(dataset, aes(x = year, y=get(input$medaltype))) + xlab("Year") + ylab("Number of Medals") + geom_line() #getting the chosen medaltype as the y-value
       
     })
     
  # the markdown tab
     getPage <- function() {
-      return(includeHTML("Markdown2.html"))
+      return(includeHTML("Markdown2.html")) # getting the markdown report
     }
     output$inc <- renderUI({getPage()})
    
