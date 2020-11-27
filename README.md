@@ -6,14 +6,9 @@ This app is designed to visualize Olympic Medal winners interactively. The devel
 With this app, we want the user to get an interactive experience of the Olympic medal count.
 
 
-| First Header  | Second Header | | Third hearder |
-| ------------- | ------------- | | ------------- |
-| <img src="https://raw.githubusercontent.com/juliengol/BAN400/main/medal_map.JPG" width="300">  | <img src="https://raw.githubusercontent.com/juliengol/BAN400/main/medal_timeline.JPG" width="300">  | | <img src="https://raw.githubusercontent.com/juliengol/BAN400/main/markdown_report.JPG" width="300">     |
-
-
-<img src="https://raw.githubusercontent.com/juliengol/BAN400/main/medal_map.JPG" width="300">
-<img src="https://raw.githubusercontent.com/juliengol/BAN400/main/medal_timeline.JPG" width="300">
-<img src="https://raw.githubusercontent.com/juliengol/BAN400/main/markdown_report.JPG" width="300">
+Solarized dark             |  Solarized Ocean           | Header
+:-------------------------:|:-------------------------: | :---------------------------:
+<img src="https://raw.githubusercontent.com/juliengol/BAN400/main/medal_map.JPG" width="300">  |  <img src="https://raw.githubusercontent.com/juliengol/BAN400/main/medal_timeline.JPG" width="300">  | <img src="https://raw.githubusercontent.com/juliengol/BAN400/main/markdown_report.JPG" width="300">
 
 
 
