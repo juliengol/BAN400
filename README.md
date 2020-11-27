@@ -5,9 +5,13 @@ This app is designed to visualize Olympic Medal winners interactively. The devel
 
 With this app, we want the user to get an interactive experience of the Olympic medal count.
 
-![Map view of the medals in the shiny app](https://raw.githubusercontent.com/juliengol/BAN400/main/medal_map.JPG){width=30%}
+![](https://raw.githubusercontent.com/juliengol/BAN400/main/medal_map.JPG){width=30%}
+
+[Map view of the medals in the shiny app](https://raw.githubusercontent.com/juliengol/BAN400/main/medal_map.JPG)
+
 ![Graph view of the medals in the shiny app](https://raw.githubusercontent.com/juliengol/BAN400/main/medal_timeline.JPG){width=30%}
 ![Markdown report in the shiny app](https://raw.githubusercontent.com/juliengol/BAN400/main/markdown_report.JPG){width=30%}
+
 
 
 ## Method and installations 
