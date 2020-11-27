@@ -5,9 +5,10 @@ This app is designed to visualize Olympic Medal winners interactively. The devel
 
 With this app, we want the user to get an interactive experience of the Olympic medal count.
 
-![Map view of the medals in the shiny app](C:\Users\marie\Documents\NHH_9_semester\BAN400\Apptester\medal_map.JPG){width=30%}
-![Graph view of the medals in the shiny app](C:\Users\marie\Documents\NHH_9_semester\BAN400\Apptester\medal_timeline.JPG){width=30%}
-![Markdown report in the shiny app](C:\Users\marie\Documents\NHH_9_semester\BAN400\Apptester\markdown_report.JPG){width=30%}
+![Map view of the medals in the shiny app](https://raw.githubusercontent.com/juliengol/BAN400/main/medal_map.JPG){width=30%}
+![Graph view of the medals in the shiny app](https://raw.githubusercontent.com/juliengol/BAN400/main/medal_timeline.JPG){width=30%}
+![Markdown report in the shiny app](https://raw.githubusercontent.com/juliengol/BAN400/main/markdown_report.JPG){width=30%}
+
 
 ## Method and installations 
 *Olympic Medals* depends on different packages to be able to run. The app is made in *Shiny*, and the specifications are mainly from this library. Additionally, a Markdown report is included as one of the tabs in the app by using the Markdown library in R. The packages transform the data and makes the app.
