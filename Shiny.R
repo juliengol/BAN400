@@ -173,7 +173,7 @@ server <- function(input,output, session){
     
  # the markdown tab
     getPage <- function() {
-      return(includeHTML("Markdown.html")) # getting the markdown report. NB! The Markdown report is found in the GitHub folder and needs to be downloaded
+      return(includeHTML("Markdown.html")) # getting the markdown report. NB! The Markdown report is found in the GitHub folder and needs to be knitted 
     }
     output$inc <- renderUI({getPage()})
    
