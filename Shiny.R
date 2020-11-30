@@ -61,38 +61,20 @@ medal <-
 #Adding total number of medals
 medal$combined <-rowSums(medal[, c(6,7,8)])
 
-#-------------------------------------------------------------------------------- !!!Denne kan kanksje endres? Vi trenger ikke funksjonen
-
-# making a function to find medals per country
-medals<- function(data, by_year = FALSE) {
-  # preparing the data
-  ol <- data %>%                               
-    mutate(Gold   = medal == "Gold",           # splitting the medal column
-           Silver = medal == "Silver",         # into separate columns for 
-           Bronze = medal == "Bronze")         # gold, silver and bronze medals
-  # Then filter                                
-  if(isTRUE(by_year)) {                       
-    ol<- ol %>%                                # grouping by year and country if  
-      group_by(year, country)                    # TRUE is set in the argument,
-  } else {                                     # group only by country if not
-    ol<- ol %>% 
-      group_by(country)
-  }
-  # dividing by medal type
-  ol <- ol %>% 
-    dplyr::summarise(                         
-      Nr_Medals   = sum(!is.na(medal)),       # counting total amount of medals
-      Gold        = sum(Gold,   na.rm = T),   # sorting by country and number of 
-      Silver      = sum(Silver, na.rm = T),   # each type of medals, counting 
-      Bronze      = sum(Bronze, na.rm = T),   # winning contestants.
-      contestants = n()) %>%                  
-    arrange(-Nr_Medals)                       # most winning countries at the top 
-}                                             # !is.na --> sum all values that is not equal to na.
-
-#-------------------------------------------------------------------------------
-
-#Total number of medals per country                 
-only.medals<-medals(df.ol, by_year = FALSE)   # sorting only by country
+# Creating the 'only.medals' data frame
+only.medals<- df.ol %>% 
+  mutate(Gold   = medal == "Gold",           # splitting the medal column
+         Silver = medal == "Silver",         # into separate columns for 
+         Bronze = medal == "Bronze")%>%      # gold, silver and bronze medals
+  group_by(country) %>%                      # group only by country
+  dplyr::summarise(                         
+    Nr_Medals   = sum(!is.na(medal)),       # counting total amount of medals
+    Gold        = sum(Gold,   na.rm = T),   # sorting by country and number of 
+    Silver      = sum(Silver, na.rm = T),   # each type of medals, counting 
+    Bronze      = sum(Bronze, na.rm = T),   # winning contestants.
+    contestants = n()) %>%                  
+  arrange(-Nr_Medals)                       # most winning countries at the top 
+                                            # !is.na --> sum all values that is not equal to na.
 
 #Adjusting df with coordinates of capitals to be used in the map
 coord<- read_csv("concap.csv") %>% 
