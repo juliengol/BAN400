@@ -23,7 +23,7 @@ This app is designed to visualize Olympic Medal winners interactively. The devel
 ## How to start and use the app
 The dataset used in the app is a combination of medals from the Winter and Summer Olympics, in addition to information about countries and geographical location of the countries. To make sure there are no duplicates, we clean the dataset before we start the necessary calculations and adjustments. 
 
-One of the main data frames used in the app is the frame called Medal, consisting of year, country and number of medals. This dataset is further used to specify different aspects. 
+One of the main data frames used in the app is the data frame called Medal, consisting of year, country and number of medals. This dataset is further used to specify different aspects. 
 
 The app consists of a user interface, *ui*, deciding how we want the app to look like, and a server, *server*, being the function of how to get the desired output. The server function consists of the three parameters input, output, and session. The app is opened by running `shiny::shinyApp(ui = ui, server = server)`
 
