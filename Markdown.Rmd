@@ -181,7 +181,7 @@ df.ol%>%
 
 ```{r medals, echo=FALSE, warning=FALSE, message=FALSE}
 
-# function for data frame separating winners by type and country
+# data frame separating winners by type and country
 
 # Creating the 'only.medals' data frame. 
 only.medals<- df.ol %>% 
@@ -329,7 +329,7 @@ df.ol %>%
   mutate(totals = sum(n),                       # Finding the number of medals 
          percent_Medals = n/sum(n)) %>%         # per country sorted by events
   arrange(desc(percent_Medals)) %>%             # counting the total number of
-  filter(n> 200) %>%                            # medals and calculating the percentage)
+  filter(n> 200) %>%                            # medals and calculating the percentage
   kbl(caption = "Table: Most Winning Country in a Single Sport",
       col.names = c('Event', 'Country', 'Medals won', 'Total number of medals', '%'),
       align = "llccc",
@@ -479,7 +479,20 @@ df.ol %>%
 
 ```{r bar animation, echo=FALSE,  warning=FALSE, message=FALSE}
 
-year.medals<-medals(df.ol, by_year = TRUE)     # sorting by year and country
+year.medals<- df.ol %>% 
+  mutate(Gold   = medal == "Gold",           # splitting the medal column
+         Silver = medal == "Silver",         # into separate columns for 
+         Bronze = medal == "Bronze")%>%      # gold, silver and bronze medals
+  group_by(country, year) %>%                # group only by country and year
+  dplyr::summarise(                         
+    Nr_Medals   = sum(!is.na(medal)),       # counting total amount of medals
+    Gold        = sum(Gold,   na.rm = T),   # sorting by country and number of 
+    Silver      = sum(Silver, na.rm = T),   # each type of medals, counting 
+    Bronze      = sum(Bronze, na.rm = T),   # winning contestants.
+    contestants = n()) %>%                  
+  arrange(-Nr_Medals)                       # most winning countries at the top 
+# !is.na --> sum all values that is not equal to na.
+
 # first, creating and sorting a df for medals
 medal <- year.medals %>%                       # choose to count gold medals and
   select(year, country, Gold) %>%              # sort by countries over time
