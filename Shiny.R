@@ -100,13 +100,13 @@ ui <-
                  tabPanel("Olympic Medals Map",    # designing the tab for the map
                           div(class="outer",
                               fluidPage(
-                                titlePanel(h2("Overview of countries",align = "center")),
+                                titlePanel(h2("Olympic Medal Count Overview",align = "center")),
                                 leafletOutput("mymap",height = 1000)
                               )
                               )),
                  tabPanel("Medal Count Timeline",  # designing the tab for the graph timeline
                           fluidPage(
-                   titlePanel(h2("Olympic medals timeline by country",align = "center")),
+                   titlePanel(h2("Olympic Medals Timeline by Country",align = "center")),
                    sidebarLayout(    
                      sidebarPanel(
                        selectInput(inputId = "dataset",             # making the drop down menu for countries
