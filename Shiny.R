@@ -100,7 +100,7 @@ ui <-
                  tabPanel("Olympic Medals Map",    # designing the tab for the map
                           div(class="outer",
                               fluidPage(
-                                titlePanel(h2("Olympic Medal Count Overview",align = "center")),
+                                titlePanel(h2("Olympic Medal Overview",align = "center")),
                                 leafletOutput("mymap",height = 1000)
                               )
                               )),
