@@ -124,7 +124,7 @@ colnames(df.ol) <- tolower(colnames(df.ol))
 duplicates <- df.ol %>% 
   find_duplicates(year, athlete, event, medal, discipline)
 
-#Removing duplicates
+# Removing duplicates
 df.ol <- df.ol %>% distinct()
 
 ```
@@ -185,7 +185,7 @@ df.ol%>%
 
 # Creating the 'only.medals' data frame. 
 only.medals<- df.ol %>% 
-  mutate(Gold   = medal == "Gold",           # splitting the medal column
+  mutate(Gold   = medal == "Gold",           # Splitting the medal column
          Silver = medal == "Silver",         # into separate columns for 
          Bronze = medal == "Bronze")%>%      # gold, silver and bronze medals
   group_by(country) %>%                      # group only by country
@@ -219,9 +219,9 @@ kbl(head(only.medals),
 
 
 df.medals <- df.ol %>% 
-  mutate(Gold   = medal == "Gold",           # splitting the medal column
-          Silver = medal == "Silver",        # into separate columns for 
-          Bronze = medal == "Bronze") %>% 
+  mutate(Gold   = medal == "Gold",           # Splitting the medal column
+          Silver = medal == "Silver",        # into separate columns for each
+          Bronze = medal == "Bronze") %>%    # type of medal
   group_by(country) %>% 
   summarise(                         
     All         = sum(!is.na(medal)),       # counting total amount of medals
@@ -386,11 +386,11 @@ df.us <- df.ol %>%
   complete(medal,year)
 
 
-# finding the year with the most medals won to set a limit on the y axis.
+# Finding the year with the most medals won to set a limit on the y axis.
 most_medals <- max(df.us$n_medal, na.rm = TRUE)
 
 
-# plotting the animation
+# Plotting the animation
 df.us %>% 
   ggplot(aes(year,n_medal,color=medal,group=medal)) + 
   geom_line() +
@@ -456,7 +456,7 @@ _(Anno 2020 Pelphs has a total of 28 Olympic medals, still reigning as most winn
 df.ol %>% 
   count(year, gender) %>%
   group_by(year) %>%
-  mutate(Percent = n/sum(n)*100) %>%                 # sorting by percentage
+  mutate(Percent = n/sum(n)*100) %>%                 # Sorting by percentage
   arrange(desc(Percent)) %>%
   ggplot(mapping = aes(x = year, y = Percent, color = gender)) + 
   geom_point() + 
@@ -516,7 +516,7 @@ medals_formatted <- medal %>%
 # Amrrs (2020, 16. March) animated_bar_charts_in_R. Retreived from: https://github.com/amrrs/animated_bar_charts_in_R/blob/master/animated_bar_plot_in_R.R
 
 # Majed Raja RS, A. (2019, 5. March). Create Trending Animated Bar Charts using R.
-# retreived from: https://towardsdatascience.com/create-animated-bar-charts-using-r-31d09e5841da
+# Retreived from: https://towardsdatascience.com/create-animated-bar-charts-using-r-31d09e5841da
 
 anim <- ggplot(medals_formatted, aes(rank, 
                                      group = country, 
