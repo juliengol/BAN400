@@ -1,4 +1,4 @@
-# load packages
+# Load packages
 library(shiny)
 library(ggplot2)
 library(tidyverse)
@@ -27,18 +27,18 @@ df.ol<- winter %>%
   bind_rows(summer) %>% 
   inner_join(., info, by = "code") 
 
-# to avoid confusion, we apply lower case to all column names:
+# To avoid confusion, we apply lower case to all column names:
 colnames(df.ol) <- tolower(colnames(df.ol))
 
-#The relevant test for our historic data is testing for duplicates 
+# The relevant test for this assigment, given the historical data, is to test for duplicates: 
 duplicates <- df.ol %>% 
   find_duplicates(year, athlete, event, medal, discipline)
 
-#Removing duplicates
+# Removing duplicates
 df.ol <- df.ol %>% distinct()
 
 
-#Medal overview per year and country, cumsum of medal count
+# Medal overview per year and country, cumsum of medal count
 medal <-
   df.ol %>%
   mutate(Gold = medal == "Gold",    
@@ -58,7 +58,7 @@ medal <-
   mutate(gold = cumsum(Gold), silver = cumsum(Silver), bronze = cumsum(Bronze)) %>%  #making the cumulative sum of the medals per country          
   ungroup() 
 
-#Adding total number of medals
+# Adding total number of medals
 medal$combined <-rowSums(medal[, c(6,7,8)])
 
 # Creating the 'only.medals' data frame
@@ -76,7 +76,7 @@ only.medals<- df.ol %>%
   arrange(-Nr_Medals)                       # most winning countries at the top 
                                             # !is.na --> sum all values that is not equal to na.
 
-#Adjusting df with coordinates of capitals to be used in the map
+# Adjusting df with coordinates of capitals to be used in the map
 coord<- read_csv("concap.csv") %>% 
   select(CountryName, CapitalLatitude, CapitalLongitude) %>% 
   dplyr::rename(country = "CountryName",             # choosing country 
@@ -93,7 +93,7 @@ df.map<- only.medals %>%
 
 #SHINY APP
 
-#User interface
+# User interface:
 ui <- 
   # making a navbar page to get the tabs
   navbarPage("Olympic Medals", id="medals",
@@ -125,7 +125,7 @@ ui <-
                    )
                  
 
-# server function
+# Server function:
 server <- function(input,output, session){
   # the map tab 
   output$mymap <- renderLeaflet({      
@@ -141,7 +141,7 @@ server <- function(input,output, session){
       setView(lng = 53, lat = 9, zoom = 2)   # setting the world as the view of the map 
   })
   
- # the graph tab
+ # The graph tab:
     datasetInput <- reactive({      # filtering the dataset to consist of the data for the chosen country
       medal %>% filter(country == input$dataset)
     })
@@ -154,7 +154,7 @@ server <- function(input,output, session){
       
     })
     
- # the markdown tab
+ # The markdown tab:
     getPage <- function() {
       return(includeHTML("Markdown.html")) # getting the markdown report. NB! The Markdown report is found in the GitHub folder and needs to be knitted 
     }
@@ -162,6 +162,6 @@ server <- function(input,output, session){
    
   }
   
-shiny::shinyApp(ui = ui, server = server)    # starting the app
+shiny::shinyApp(ui = ui, server = server)    # Starting the app
 
 
