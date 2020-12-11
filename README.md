@@ -1,5 +1,5 @@
 # Olympic Medals Shiny app
-### Exam BAN400, cand: 10, 75, x
+### Exam BAN400, cand: 10, 30, 75
 
 ## Introduction and purpose
 This app is designed to visualize Olympic Medal winners interactively. The development of the app is part of the BAN400 course at the Norwegian School of Economics. The app consists of three tabs outlining a map with the most medal-winning countries, a timeline graph over the medal development for each country and a markdown report with graphs and detailed information about the dataset.
