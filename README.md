@@ -1,5 +1,5 @@
 # Olympic Medals Shiny app
-### Exam BAN400, cand: 75, x, x
+### Exam BAN400, cand: 10, 75, x
 
 ## Introduction and purpose
 This app is designed to visualize Olympic Medal winners interactively. The development of the app is part of the BAN400 course at the Norwegian School of Economics. The app consists of three tabs outlining a map with the most medal-winning countries, a timeline graph over the medal development for each country and a markdown report with graphs and detailed information about the dataset.
@@ -22,14 +22,14 @@ This app is designed to visualize Olympic Medal winners interactively. The devel
  install.packages("knitr")`
 
 ## How to start and use the app
-The dataset used in the app is a combination of medals from the Winter and Summer Olympics, in addition to information about countries and geographical location of the countries. To make sure there are no duplicates, we clean the dataset before we start the necessary calculations and adjustments. 
+The dataset used in the app is a combination of medals from the Winter and Summer Olympics, in addition to information about countries and the geographical location of the countries. To make sure there are no duplicates, we clean the dataset before we start the necessary calculations and adjustments. 
 
 One of the main frames used in the app is the data frame called Medal, consisting of year, country and number of medals. This dataset is further used to specify different aspects. 
 
 The app consists of a user interface, *ui*, deciding how we want the app to look like, and a server, *server*, being the function of how to get the desired output. The server function consists of the three parameters input, output, and session. The app is opened by running `shiny::shinyApp(ui = ui, server = server)`
 
 
-In order to make the markdown tab work, you need to dowload the Markdown.Rmd file found in the GitHub-folder. 
+In order to make the app and markdown tab work, you need to dowload the Markdown.Rmd file found in the GitHub-folder, and push the "knit" button in Rstudio *before* running the app. 
 
 
 
