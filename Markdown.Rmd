@@ -339,7 +339,7 @@ df.ol %>%
 ```
 <font size="3"> _The table shows which country that has won the most medals in a single sport **percentage wise** compared to the total amount of medals given._
 
-The US has won the most medals in a single sport, which is Basketball. In this sport, they account for 42,6% of the medals.</font> 
+The US has won the most medals in a single sport, which is Basketball. In this sport, they account for 42.6% of the medals.</font> 
 
 |
 |
