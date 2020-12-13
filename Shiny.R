@@ -30,7 +30,7 @@ df.ol<- winter %>%
 # To avoid confusion, we apply lower case to all column names:
 colnames(df.ol) <- tolower(colnames(df.ol))
 
-# The relevant test for this assigment, given the historical data, is to test for duplicates: 
+# The relevant test for this assignment, given the historical data, is to test for duplicates: 
 duplicates <- df.ol %>% 
   find_duplicates(year, athlete, event, medal, discipline)
 
