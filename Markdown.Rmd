@@ -513,10 +513,10 @@ medals_formatted <- medal %>%
 # Animation of the medal gold count: 
 
 # // souces: 
-# Amrrs (2020, 16. March) animated_bar_charts_in_R. Retreived from: https://github.com/amrrs/animated_bar_charts_in_R/blob/master/animated_bar_plot_in_R.R
+# Amrrs (2020, 16. March) animated_bar_charts_in_R. Retrieved from: https://github.com/amrrs/animated_bar_charts_in_R/blob/master/animated_bar_plot_in_R.R
 
 # Majed Raja RS, A. (2019, 5. March). Create Trending Animated Bar Charts using R.
-# Retreived from: https://towardsdatascience.com/create-animated-bar-charts-using-r-31d09e5841da
+# Retrieved from: https://towardsdatascience.com/create-animated-bar-charts-using-r-31d09e5841da
 
 anim <- ggplot(medals_formatted, aes(rank, 
                                      group = country, 
