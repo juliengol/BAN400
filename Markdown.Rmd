@@ -40,7 +40,7 @@ body, td {
 }
 </style>
 
-However, that code made the contents of the markdown crash into the table of contents(TOC) in the shiny app. Thus, for a nicer appearance of the markdown in the shiny app, we decided to add the first code to every string of text to avoid the content chrasing into the TOC: -->
+However, that code made the contents of the markdown crash into the table of contents(TOC) in the shiny app. Thus, for a nicer appearance of the markdown in the shiny app, we decided to add the first code to every string of text to avoid the content crashing into the TOC: -->
 
 |
 |
