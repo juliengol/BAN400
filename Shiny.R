@@ -156,7 +156,7 @@ server <- function(input,output, session){
     
  # The markdown tab:
     getPage <- function() {
-      return(includeHTML("Markdown.html")) # getting the markdown report. NB! The Markdown report is found in the GitHub folder and needs to be knitted 
+      return(includeHTML("Markdown.html")) # getting the markdown report. NB! The Markdown report is found in the zip and needs to be opened in R and knitted before the app can run. 
     }
     output$inc <- renderUI({getPage()})
    
