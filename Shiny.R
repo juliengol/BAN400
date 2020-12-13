@@ -55,7 +55,7 @@ medal <-
   select(year, country, Gold, Silver, Bronze) %>%            # sort by countries over time
   group_by(country) %>%                      
   arrange(year) %>%                         
-  mutate(gold = cumsum(Gold), silver = cumsum(Silver), bronze = cumsum(Bronze)) %>%  #making the cumulative sum of the medals per country          
+  mutate(gold = cumsum(Gold), silver = cumsum(Silver), bronze = cumsum(Bronze)) %>%  # making the cumulative sum of the medals per country          
   ungroup() 
 
 # Adding total number of medals
