@@ -8,7 +8,12 @@ library(markdown)
 library(knitr)
 library(hablar)
 
-# Loading data sets 
+
+# These chunks of coding for fixing the data frame (except the part regarding duplicates) is taken from our BAN420 project, as this project
+# is a continuation of the BAN420 project.
+
+# Loading data sets:
+
 winter<-read_csv("winter.csv") %>%              # Winter olympics
   rename(code   = "Country") %>%                # renaming the column "Country" to code, to merge with "info"
   mutate(season = "winter")
@@ -61,7 +66,7 @@ medal <-
 # Adding total number of medals
 medal$combined <-rowSums(medal[, c(6,7,8)])
 
-# Creating the 'only.medals' data frame
+# Creating the 'only.medals' data frame (code from the BAN420 project)
 only.medals<- df.ol %>% 
   mutate(Gold   = medal == "Gold",           # splitting the medal column
          Silver = medal == "Silver",         # into separate columns for 
