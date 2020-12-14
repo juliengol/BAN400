@@ -165,6 +165,8 @@ df.ol %>%
 
 ```{r events, echo=FALSE, warning=FALSE, message=FALSE}
 
+# This code is from our BAN420 project:
+
 df.ol%>%
   group_by(season, year) %>%
   summarise(Events = n_distinct(event)) %>%
@@ -177,7 +179,10 @@ df.ol%>%
 
 ```
 
-<font size="3">The graph shows that the summer Olympics has a higher number of sport events than the winter Olympics. Furthermore, the number of events for recent years is decreasing for summer Olympics, while it is increasing for winter Olympics.</font> 
+<font size="3"> _Graph taken from our BAN420 project_
+ 
+ 
+The graph shows that the summer Olympics has a higher number of sport events than the winter Olympics. Furthermore, the number of events for recent years is decreasing for summer Olympics, while it is increasing for winter Olympics.</font> 
 
 |
 |
@@ -190,7 +195,7 @@ df.ol%>%
 
 # data frame separating winners by type and country.
 
-# Creating the 'only.medals' data frame (code from our BAN420-project):
+# Creating the 'only.medals' data frame (code from our BAN420 project):
 only.medals<- df.ol %>% 
   mutate(Gold   = medal == "Gold",           # Splitting the medal column
          Silver = medal == "Silver",         # into separate columns for 
@@ -313,6 +318,7 @@ wordcloud(words = df.medals$country,
 
 ```{r events1, echo=FALSE, warning=FALSE, message=FALSE}
 
+# This code is taken from our BAN420 project:
 
 df.ol[, c(1,3)] %>% 
   ggplot(aes(fct_infreq(sport), fill=sport)) + 
@@ -325,7 +331,10 @@ df.ol[, c(1,3)] %>%
   
 ```
 
-<font size="3">Aquatics, Athletics and Rowing have the highest amounts of gold medals. Roque, jeu de paume, basque pelota and water motorsports have very few gold medals.</font> 
+<font size="3"> _This plot is from our BAN420 project_ 
+ 
+ 
+ Aquatics, Athletics and Rowing have the highest amounts of gold medals. Roque, jeu de paume, basque pelota and water motorsports have very few gold medals.</font> 
 
 |
 |
@@ -334,6 +343,9 @@ df.ol[, c(1,3)] %>%
 ## 6. Most Winning Country in a Single Sport
 
 ```{r most winning country, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Parts of this code is taken from the BAN420 project, but is edited to make a markdown friendly table:
+
 df.ol %>%
   count(event, country) %>%
   group_by(event) %>%
@@ -359,6 +371,8 @@ The US has won the most medals in a single sport, which is Basketball. In this s
 ## 7. Highest Participation in a Single Sport 
 
 ```{r participation, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Parts of this code is taken from the BAN420 project, but is edited to make a markdown friendly table:
 
 df.ol %>%
   group_by(country, sport) %>%
@@ -389,6 +403,9 @@ Not surprisingly, Norway is the country with the highest participation in skiing
 |
 
 ```{r, plot over US, echo=FALSE, warning=FALSE, message=FALSE}
+
+# These sets of code chunks are taken from our BAN420 project:
+
 df.us <- df.ol %>% 
   filter(country == "United States") %>% 
   select(c(medal, year, season)) %>%
@@ -414,7 +431,9 @@ df.us %>%
 
 ```
 
-<font size="3">There is a somewhat similar pattern for the different types of medals.
+<font size="3"> _This plot is taken from our BAN420 project_
+ 
+There is a somewhat similar pattern for the different types of medals.
 Gold medals are often won in a greater number than bronze and silver. 
 
 The plot also illustrates:
@@ -429,6 +448,9 @@ The plot also illustrates:
 ## 9. Most Winning Contestant 
 
 ```{r contestant, echo=FALSE,  warning=FALSE, message=FALSE}
+
+# Parts of these code chunks are taken from the BAN420 project, but are edited to make a markdown friendly table:
+
 indiv_medals <- df.ol %>%                   # creating a data frame for medals
   group_by(athlete,sport) %>%               # per contestants, and another where
   summarise(medals = n())                   # medals is sorted by descending order
@@ -463,6 +485,9 @@ _(Anno 2020 Pelphs has a total of 28 Olympic medals, still reigning as most winn
 <font size="3">Like other parts of society, the Olympic games restricted female participation for quite some time. The following plot will demonstrate the genders' participation development over the years.</font> 
 
 ```{r gender, echo=FALSE, fig.width = 8, fig.height= 6}
+
+# This code is taken from our BAN420 project:
+
 # Olympic medals by gender for winter and summer combined
 df.ol %>% 
   count(year, gender) %>%
@@ -480,7 +505,9 @@ df.ol %>%
 
 ```
 
-<font size="3">From 1900, female participation started rising. However, it would take almost 96 years before each gender would represent about 50% of the events each.</font> 
+<font size="3"> _Plot taken from our BAN420 project_
+ 
+ From 1900, female participation started rising. However, it would take almost 96 years before each gender would represent about 50% of the events each.</font> 
 
 |
 |
@@ -489,6 +516,9 @@ df.ol %>%
 ## 11. Bar Animation for Gold Medals over the Years
 
 ```{r bar animation, echo=FALSE,  warning=FALSE, message=FALSE}
+
+
+# These chunks of codes are taken from our BAN420 project and are mostly similar, but is edited a bit to make the animation look better. 
 
 year.medals<- df.ol %>% 
   mutate(Gold   = medal == "Gold",           # splitting the medal column
@@ -572,7 +602,10 @@ anim
 
 ```
 
-<font size="3">This animation illustrates the development of gold medals over time for the top ten winning countries. The US attains a clear lead in number of gold medals from the 1920s, and remains as 'the most winning gold medal nation' through all of the following years.
+<font size="3"> _Animation taken and improved from our BAN420 project_
+ 
+ 
+This animation illustrates the development of gold medals over time for the top ten winning countries. The US attains a clear lead in number of gold medals from the 1920s, and remains as 'the most winning gold medal nation' through all of the following years.
 
 _The inspiration and explanations for how to create a bar animation can be found [here](https://towardsdatascience.com/create-animated-bar-charts-using-r-31d09e5841da) and [here](https://github.com/amrrs/animated_bar_charts_in_R/blob/master/animated_bar_plot_in_R.R)_</font> 
 
