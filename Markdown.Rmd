@@ -94,6 +94,10 @@ library(hablar)
 ```
 
 ```{r sort data, include=FALSE}
+
+# These chunks of coding for fixing the data frame (except the part regarding duplicates) is taken from our BAN420-project, as this project
+# is a continuation of the BAN420 project.
+
 # Loading data sets 
 winter<-read_csv("winter.csv") %>%          # Winter Olympics
   rename(code   = "Country") %>%            # renaming the column "Country" to code, 
@@ -144,6 +148,9 @@ df.ol %>%
   kable_styling(c("striped", "hover", "condensed"), full_width = F, position = "left")
 
  # kbl: command for creating a table
+ 
+ # Parts of this code is taken from the BAN420-project, but is edited to put it in a Markdown-friendly format. 
+
 
 ```
 
@@ -181,9 +188,9 @@ df.ol%>%
 
 ```{r medals, echo=FALSE, warning=FALSE, message=FALSE}
 
-# data frame separating winners by type and country
+# data frame separating winners by type and country.
 
-# Creating the 'only.medals' data frame. 
+# Creating the 'only.medals' data frame (code from our BAN420-project):
 only.medals<- df.ol %>% 
   mutate(Gold   = medal == "Gold",           # Splitting the medal column
          Silver = medal == "Silver",         # into separate columns for 
@@ -198,6 +205,7 @@ only.medals<- df.ol %>%
   arrange(-Nr_Medals)                       # most winning countries at the top 
 # !is.na --> sum all values that is not equal to na.
 
+# Using the data frame to create a markdown table:
 
 kbl(head(only.medals),                       
     col.names = c('Country', 'Total number of medals', 'Gold', 'Silver', 'Bronze', 'Contestants'),
@@ -217,6 +225,9 @@ kbl(head(only.medals),
 
 ```{r word cloud code, echo=FALSE, warning=FALSE,message=FALSE}
 
+# These code chunks are inspired by our word cloud from the BAN420 project,
+# but are not quite similar as a new data frame is being used, and as several word clouds
+# are created and put in a context to create "tabs" in this markdown section. 
 
 df.medals <- df.ol %>% 
   mutate(Gold   = medal == "Gold",           # Splitting the medal column
