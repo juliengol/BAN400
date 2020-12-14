@@ -12,7 +12,7 @@ library(hablar)
 # These chunks of coding for fixing the data frame (except the part regarding duplicates) is taken from our BAN420 project, as this project
 # is a continuation of the BAN420 project.
 
-# Loading data sets:
+# Loading data sets, fixing data frames:
 
 winter<-read_csv("winter.csv") %>%              # Winter olympics
   rename(code   = "Country") %>%                # renaming the column "Country" to code, to merge with "info"
