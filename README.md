@@ -29,7 +29,7 @@ One of the main frames used in the app is the data frame called Medal, consistin
 The app consists of a user interface, *ui*, deciding how we want the app to look like, and a server, *server*, being the function of how to get the desired output. The server function consists of the three parameters input, output, and session. The app is opened by running `shiny::shinyApp(ui = ui, server = server)`
 
 
-In order to make the app and markdown tab work, you need to download the Markdown.Rmd file found in the GitHub-folder, and push the "knit" button in Rstudio *before* running the app. 
+In order to make the app and markdown tab work, you need to download the Markdown.Rmd file found in the zip-folder, and push the "knit" button in Rstudio *before* running the app. 
 
 
 
